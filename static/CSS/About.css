@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* background-color: green; */
+
+}
+html{
+    scroll-behavior: smooth;
+}
+:root {
+    --navbar-height: 59px;
+    background-color: rgb(5 36 50);
+}
+/* Navigation bar */  
+#navbar{
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 0px;
+    position: sticky;
+    z-index: 1;
+    /* border: 2px solid red; */
+}
+
+ /* logo and image */
+#logo video{  
+    width: 86px;
+    height: 98px;
+    filter: invert(100%);
+}
+
+ /* Navigation bar: list styling */
+#navbar::before{
+     content: " ";
+     background-color: black;
+     position: absolute;
+     height: 100%;
+     top: 0px;
+     left: 0px;
+     width: 100%;
+     z-index: -1;
+     opacity: 0.4;
+ }
+#navbar ul{
+    display: flex;
+    font-family: 'Baloo Bhai 2', cursive;
+/* font-family: 'Bree Serif', serif; */
+}
+#navbar ul li{
+    list-style: none;
+    font-size: 1.3rem;
+}
+#navbar ul li a{
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 3px 22px;
+    border-radius: 20px;
+}
+#navbar ul li a:hover{
+    color: black;
+    background-color: white;
+    text-decoration:underline ;
+}
+.About::before{
+    content: " ";
+    position: absolute;
+    /* background: url('../join.jpg') no-repeat center center/cover ; */
+    height: 72%;
+    top: 124px;
+    left: 29px;
+    width: 34%;
+    z-index: -1;
+    opacity: 0.89;
+
+}
+.About h1{
+    /* background-image: url("../image/About1.jpg"); */
+    font-size: 44px;
+    position: relative;
+    margin: revert;
+    top: 33px;
+    left: 0px;
+    padding-left: 455px;
+    text-align: center;
+    color: White;
+}
+#About::before{
+    content: " ";
+    position: absolute;
+    /* background-color: cornflowerblue; */
+    /* background-blend-mode: color-burn; */
+    width: 68%;
+    height: 66%;
+    z-index: -1;
+    opacity: 0.9;
+}
+#About{
+    /* background-color: whitesmoke;
+    border: 2px solid red; */
+    border-radius: 34px;
+    font-family: 'Baloo Bhai 2', cursive;
+    position: relative;
+    right: -237px;
+    /* font-family: 'Bree Serif', serif; */;
+    /* display: flex; */
+    text-align: center;
+    margin: 18px 328px;
+    padding: 33px 50px;
+    color: whitesmoke;
+    font-size: 21px;
+}
+.logo {
+	float: left;
+}
+.logo img {
+    height: 60px;
+	width: 100%;
+	padding: 15px 0;
+}
+#About span{
+    color: steelblue;
+    font-size: 27px;
+}
+footer{
+    background: black;
+    color: white;
+    padding: 9px 20px;
+}

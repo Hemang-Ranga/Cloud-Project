@@ -1,0 +1,83 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* CSS Variables */
+:root {
+    --navbar-height: 59px;
+}
+#navbar{
+    flex-direction: column;
+}
+#navbar ul li a{
+    font-size: 1rem;
+    padding: 0px 7px;
+    padding-bottom: 8px;
+}
+footer{
+    background: black;
+    color: white;
+    padding: 9px 20px;
+}
+
+.form-box{
+    width: 280px;
+    height: 478px;
+    position: relative;
+    margin: 1% auto;
+    background: rgba(255, 254, 254,0.8);
+    padding: 5px;
+    border-radius: 23px;
+    /* text-decoration: bolder; */
+    overflow: hidden;
+}
+
+.button-box{
+    width: 220px;
+    height: 42px;
+    margin: 18px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 24px;
+}
+#login{
+    top: 140px;
+    left: 20px;
+}
+.submit-btn {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: 0px -41px;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border: 0px;
+    outline: none;
+    border-radius: 30px;
+}
+.input-field {
+    width: 100%;
+    padding: 10px 16px;
+    margin: 5px 0;
+    margin-left: -25px;
+    border-left: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+    outline: none;
+    background: transparent;
+}
+.checkbox {
+    margin: 13px 10px 27px 0;
+}
+.logo {
+	float: left;
+}
+.logo img {
+    height: 60px;
+	width: 100%;
+	padding: 15px 0;
+}
