@@ -27,6 +27,9 @@
                 <li class="item"><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
+        {% for i in messages %}
+        <h3>{{i}}</h3>
+        {% endfor %}
         <div class="form-container">
             <div class="form-box">
                 <div class="button-box">
@@ -35,18 +38,18 @@
                     <button type="button" class="toogle-btn" onclick="register()">Register</button>
 
                 </div>
-                <form id="login" action="/accounts/login/" method="post" class="input-group">
+                <form id="login" action="" method="post" class="input-group">
                     {% csrf_token %}
                     <input type="text" class="input-field" name="username" placeholder="User Id" required>
                     <input type="password" class="input-field" name="password" placeholder="Enter Password" required>
                     <input type="checkbox" class="checkbox"><span>Remember Password</span>
                     <button type="submit" class="submit-btn">Login</button>
                 </form>
-                <form id="register" action="/accounts/register/" method="post" class="input-group">
+                <form id="register" action="{% url "register" %}" method="post" class="input-group">
                     {% csrf_token %}
                     <input type="text" class="input-field" placeholder="User Id" name="username" required>
                     <input type="email" class="input-field" placeholder="Email Id" name="email" required>
-                    <input type="password" class="input-field" placeholder="Enter Password" name="password1" required>
+                    <input type="password" class="input-field" placeholder="Enter Password" name="password" required>
                     <input type="password" class="input-field" placeholder="Confirm Password" name="password2" required>
                     <input type="checkbox" class="checkbox"><span>I agree to Terms and Conditions.</span>
                     <button type="submit" class="submit-btn">Register Now</button>

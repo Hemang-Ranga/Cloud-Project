@@ -30,6 +30,9 @@
                     <a class="nav-link" target="_block" href="{% url 'login' %}" tabindex="-1" aria-disabled="true">Login</a>                    
                 {%endif%}
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="admin" tabindex="-1" aria-disabled="true">Admin</a>
+            </li>
         </ul>
         <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="post">
             {% csrf_token %}
