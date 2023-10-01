@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for pa in para %}
+<div class="container my-4" style="background-color: whitesmoke; padding:20px">
+    <h2 class="text-center">Edit entry</h2>
+     
+    <form action="{% url 'addDatatoBase' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" value={{pa.title}} aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+            <label for="Subject">Subject</label>
+            <input type="text" class="form-control" name="subject" value={{pa.subject}} aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <small id="emailHelp" class="form-text text-muted">Links adding: [link = 'example.com'] --name-- [\link]</small>
+            <textarea class="form-control" style="overflow:scroll" name="description" rows="3">{{pa.description}}</textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="description">Links:</label>
+            <small id="emailHelp" class="form-text text-muted">--name--:: http://example.com [new line]</small>
+            <textarea class="form-control" style="overflow:scroll; height:70px " name="links" rows="3">{{pa.links}}</textarea>
+        </div> 
+
+        <button type="submit"  id="add" class="btn btn-primary" >Save Edit</button>
+</div>
+{% endfor %}
+{% endblock %}

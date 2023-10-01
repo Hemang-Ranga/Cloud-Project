@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+{%for pa in para%}
+    <div class="Content-box" style="color: whitesmoke; margin-top: 5%; height:fit-content; align-items:center;  border: 1px solid white; border-radius:30px">
+        <h2 style="font-family: Arial, Helvetica, sans-serif; text-align:center">
+           {{pa.title}}
+        </h2>
+        <p style="font-family: Arial, Helvetica, sans-serif; padding-bottom:10px; margin-left: 10px; margin-right: 10px; margin-bottom:20px; border-bottom: 1px solid white;">Subject: <b>{{pa.subject}}</b></p>
+        <p style="font-family: Arial, Helvetica, sans-serif; margin-left: 10px; margin-right: 10px; margin-bottom:20px;">{{pa.description}}</p>
+        <ol style="font-size:15px; margin-left: 20px;">
+            {% for one in lin %}
+            <li>
+                <a href="{{one}}" target="_blank">{{one}}</a><br>
+            </li>
+            {% endfor %}
+        </ol>
+        <p style="font-family: Arial, Helvetica, sans-serif; font-size:14px ; margin-left: 25px; margin-bottom:20px; bottom: 2%; display:inline-block">Date created: {{pa.date_created}}</p>
+        <p style="font-family: Arial, Helvetica, sans-serif; font-size:14px ; margin-left: 200px; margin-bottom:20px; bottom: 2%; display:inline-block">Rating: </p>
+        <div class="back-rate" style="margin-left:10px; display: inline-block;">
+            {% if pa.rate >= 1 %}
+            <span style="font-size: 20px; color:darkgoldenrod">&#9733 </span>
+            {%else%}
+            <span style="font-size: 20px;">&#9733</span>
+            {%endif%}
+
+            {% if pa.rate >= 2 %}
+            <span style="font-size: 20px; color:darkgoldenrod">&#9733 </span>
+            {%else%}
+            <span style="font-size: 20px;">&#9733</span>
+            {%endif%}
+
+            {% if pa.rate >= 3 %}
+            <span style="font-size: 20px; color:darkgoldenrod">&#9733 </span>
+            {%else%}
+            <span style="font-size: 20px;">&#9733</span>
+            {%endif%}
+
+            {% if pa.rate >= 4 %}
+            <span style="font-size: 20px; color:darkgoldenrod">&#9733 </span>
+            {%else%}
+            <span style="font-size: 20px;">&#9733</span>
+            {%endif%}
+
+            {% if pa.rate >= 5 %}
+            <span style="font-size: 20px; color:darkgoldenrod">&#9733 </span>
+            {%else%}
+            <span style="font-size: 20px;">&#9733</span>
+            {%endif%}        
+        </div>
+    </div>
+    {%if user.is_authenticated and flag %}
+        <div class="Content-box" style="color: whitesmoke; margin-top: 5%; height:fit-content; align-items:center; margin-left: 35%;  padding:30px; width:fit-content; border: 1px solid white; border-radius:30px">
+            <form method="post" action="{% url 'rate' id=pa.id %}">
+                {% csrf_token %}
+                <input type="radio" id="star5"  name="rate" value="5" style="margin-left:10px;" />
+                <label for="star5" title="text" style="color: darkgoldenrod;">&#9733&#9733&#9733&#9733&#9733</label>
+                <input type="radio" id="star4" name="rate" value="4" style="margin-left:10px;" />
+                <label for="star4" title="text" style="color: darkgoldenrod;">&#9733&#9733&#9733&#9733</label>
+                <input type="radio" id="star3" name="rate" value="3" style="margin-left:10px;"/>
+                <label for="star3" title="text" style="color: darkgoldenrod;">&#9733&#9733&#9733</label>
+                <input type="radio" id="star2" name="rate" value="2" style="margin-left:10px;" />
+                <label for="star2" title="text" style="color: darkgoldenrod;">&#9733&#9733</label>
+                <input type="radio" id="star1" name="rate" value="1" style="margin-left:10px;"/>
+                <label for="star1" title="text" style="color: darkgoldenrod;">&#9733</label><br>
+                <input type="submit" style="font-family: Arial, Helvetica, sans-serif; padding:5px; margin-top:10px; margin-left: 140px; color: white; background-color:crimson; border: 1px crimson solid; border-radius: 20px " value="Rate now"/>
+            </form>
+        </div>
+    {%endif%}
+{%endfor%}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p style="color:whitesmoke; display: inline-block; margin-top: 8%; margin-left: 30%;">Results:</p>
+
+<div class="Content-box" style="margin-left:23%; width: 800px; height:500px; overflow:scroll">
+    {% for pa in para %}
+    <div class="dash_content" onclick="location.href='{% url 'disData' id=pa.id %}'">
+        <p>{{pa.title}}<br>
+        Subject: {{pa.subject}}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

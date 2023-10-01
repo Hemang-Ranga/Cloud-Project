@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="welcome-text" style="margin-top: 100px ;">
+        <h1>
+            We are the <span>Tutors</span></h1>
+    </div>
+    <div class="Content-box">
+        {% for pa in para %}
+        <div class="dash_content" onclick="location.href='{% url 'disData' id=pa.id %}'">
+            <p>{{pa.title}}<br>
+            Subject: {{pa.subject}}</p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

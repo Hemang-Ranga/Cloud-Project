@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Portal</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Baloo+Bhaina+2&family=Bree+Serif&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="{% static 'CSS/login1.css' %}">
+    <link rel="stylesheet" media="screen and (max-width: 300px)" href="{% static 'CSS/login2.css' %}">
+</head>
+
+<body style="background: url({% static 'image\join.jpg' %}) no-repeat center center/cover;">
+    <div id="LOGIN" >
+        <nav id="navbar">
+            <div class="logo">
+                <img src="{% static 'image/bgp.jpg' %}" style="cursor:auto;" onclick=location.href='/' alt="Tutor's Corner">
+            </div>
+            <ul style="margin-left: 30px;">
+                <li class="item"><a href='/'>Home</a></li>
+                <li class="item"><a href="#about">About US</a></li>
+                <li class="item"><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="form-container">
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toogle-btn" onclick="login()">Log In</button>
+                    <button type="button" class="toogle-btn" onclick="register()">Register</button>
+
+                </div>
+                <form id="login" action="/accounts/login/" method="post" class="input-group">
+                    {% csrf_token %}
+                    <input type="text" class="input-field" name="username" placeholder="User Id" required>
+                    <input type="password" class="input-field" name="password" placeholder="Enter Password" required>
+                    <input type="checkbox" class="checkbox"><span>Remember Password</span>
+                    <button type="submit" class="submit-btn">Login</button>
+                </form>
+                <form id="register" action="/accounts/register/" method="post" class="input-group">
+                    {% csrf_token %}
+                    <input type="text" class="input-field" placeholder="User Id" name="username" required>
+                    <input type="email" class="input-field" placeholder="Email Id" name="email" required>
+                    <input type="password" class="input-field" placeholder="Enter Password" name="password1" required>
+                    <input type="password" class="input-field" placeholder="Confirm Password" name="password2" required>
+                    <input type="checkbox" class="checkbox"><span>I agree to Terms and Conditions.</span>
+                    <button type="submit" class="submit-btn">Register Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        var x = document.getElementById("login")
+        var y = document.getElementById("register")
+        var z = document.getElementById("btn")
+
+        function register() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+
+        }
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+
+        }
+
+    </script>
+</body>
+
+</html>

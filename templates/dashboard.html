@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p style="color:whitesmoke; display: inline-block; margin-top: 8%; margin-left: 30%;">YOUR CONTENT:</p>
+<button onclick="location.href='/addData'" style="color: white; display: inline-block; margin-left:22%; background-color:tomato; border-radius:10px; border-color:tomato; width:100px; text-align:center; padding:5px">+ Add new</button><br>
+<div class="Content-box" style="margin-left:23%; width: 800px; height:500px; overflow:scroll">
+    {% for pa in para %}
+    <div class="dash_content" onclick="location.href='{% url 'disData' id=pa.id %}'">
+        <p>{{pa.title}}<br>
+        Subject: {{pa.subject}}</p>
+    </div>
+    <div style="margin-bottom: 20px;">
+        <button onclick="location.href='{% url 'deleteData' id=pa.id %}'" style="color: white; display: inline-block; margin-left:22%; background-color:tomato; border-radius:10px; border-color:tomato; width:100px; text-align:center; padding:5px">Delete</button>
+        <button onclick="location.href='{% url 'editData' id=pa.id %}'" style="color: white; display: inline-block; margin-left:22%; background-color:rgba(57, 102, 57, 0.788); border-radius:10px; border-color:rgba(57, 102, 57, 0.788); width:100px; text-align:center; padding:5px">Edit</button>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
