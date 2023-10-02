@@ -7,7 +7,8 @@ import re
 
 # Create your views here.
 def home(request):
-    para=Content.objects.order_by('?')[:3]
+    t = Content.objects.count()
+    para=Content.objects.order_by('?')[:t]
     return render(request, 'home.html', {'para' : para})
 
 def addDatatoBase(request):

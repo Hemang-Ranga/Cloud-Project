@@ -4,7 +4,7 @@
 <div class="container my-4" style="background-color: whitesmoke; padding:20px">
     <h2 class="text-center">Edit entry</h2>
      
-    <form action="{% url 'addDatatoBase' %}" method="post">
+    <form action="{% url 'EditDatatoBase' id=pa.id %}" method="post">
         {% csrf_token %}
         <div class="form-group">
             <label for="title">Title</label>
