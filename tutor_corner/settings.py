@@ -23,6 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-2$yf8j-_yp-6uj0$9i%5oj5b44anil)9p&cl)90&*5%il@-u&@'
 
+dbadmin = 'hemang'
+dbPassword = 'keshNi#9845'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -77,8 +79,12 @@ WSGI_APPLICATION = 'tutor_corner.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'eLearning',
+        'HOST': 'database-1.ccz8vconsqoy.ap-south-1.rds.amazonaws.com',
+        'USER': dbadmin,
+        'PASSWORD': dbPassword,
+        'PORT': '3306',
     }
 }
 
