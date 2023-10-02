@@ -8,7 +8,7 @@
             <h3 style="color: green; ">Hello {{user.username}} :) </h3>
             {% endif %}
     </div>
-    <div class="Content-box" style="overflow:scroll;">
+    <div class="Content-box">
         {% for pa in para %}
         <div class="dash_content" onclick="location.href='{% url 'disData' id=pa.id %}'">
             <p>{{pa.title}}<br>
