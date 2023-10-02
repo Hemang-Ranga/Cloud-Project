@@ -10,13 +10,13 @@
     
 
 
+    
+    <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
     <link
         href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Baloo+Bhaina+2&family=Bree+Serif&display=swap"
         rel="stylesheet">
-    
-    <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
-    {% comment %} <link rel="stylesheet" media="screen and (max-width: 600px)" href="{% static 'CSS/login1.css' %}"> {% endcomment %}
-    {% comment %} <link rel="stylesheet" media="screen and (max-width: 300px)" href="{% static 'CSS/login2.css' %}"> {% endcomment %}
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="{% static 'CSS/login1.css' %}">
+    <link rel="stylesheet" media="screen and (max-width: 300px)" href="{% static 'CSS/login2.css' %}">
 </head>
 
 <body style="background: url({% static 'image/login_bg2.jpg' %}) no-repeat center center/cover;">
@@ -57,20 +57,22 @@
 
 
         <div  class="login_heading">
-            <h1 style="text-align: center; margin-top:40px ; margin-bottom:20px; " >Connect With Us</h1>
+            <h1 style="text-align: center; margin-top:10px ; " >Connect With Us</h1>
         </div>
         <div class="form-container">
             <div class="form-box">
                 <div class="button-box">
                     <div id="btn"></div>
-                    <button type="button" class="toogle-btn" onclick="login()">Log In</button>
-                    <button type="button" class="toogle-btn" onclick="register()">Register</button>
+                    <button type="button" class="toogle-btn" onclick="login()"><b>Log In</b></button>
+                    <button type="button" class="toogle-btn" onclick="register()"><b>Register</b></button>
                 </div>
                 <form id="login" action="" method="post" class="input-group">
                     {% csrf_token %}
+                    
                     <input type="text" class="input-field" name="username" placeholder="User Id" required>
                     <input type="password" class="input-field" name="password" placeholder="Enter Password" required>
                     <input type="checkbox" class="checkbox"><span>Remember Password</span>
+                    
                     <button type="submit" class="submit-btn">Login</button>
                 </form>
                 <form id="register" action="{% url "register" %}" method="post" class="input-group">
