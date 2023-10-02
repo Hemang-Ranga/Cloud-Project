@@ -127,6 +127,7 @@
     width: 280px;
     transition: 0.5s;
     text-decoration: underline;
+    
 }
 .input-field{
     width: 100%;
@@ -136,6 +137,7 @@
     border-top: 0px;
     border-bottom: 0px;
     border-right: 0px;
+    border-color: black;
     outline: none;
     background: transparent;
 }

@@ -13,14 +13,16 @@
 </head>
 <style>
   body {
-    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),  url("{% static 'image/About2.jpg' %}")no-repeat center center/cover;
+    margin:0 ;
+    padding:0;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),  url("{% static 'image/contact1.jpg' %}")no-repeat center center/cover;
     /* opacity: 0.3; */
   }
 
   .card:hover {
     background-color: rgb(140, 135, 146);
     box-shadow: 7px 5px 15px rgb(232, 231, 235);
-    height: 600px;
+    {% comment %} height: 600px; {% endcomment %}
     width: 300px;
   }
 </style>
@@ -28,9 +30,25 @@
 <body>
   {% include 'navbar.html' %}
   <h1 class="text-center my-4 text-decoration-underline fw-bold fst-italic"style="color:darkgray ">Our Team</h1>
-  <h2 id="Fron1" class="text-center my-4 text-decoration-underline fw-bold fst-italic" style="color:darkgray ">Front-End Team</h2>
+  {% comment %} <h2 id="Fron1" class="text-center my-4 text-decoration-underline fw-bold fst-italic" style="color:darkgray ">Front-End Team</h2> {% endcomment %}
   <div class="d-flex me-3" id="front">
     
+    <div class="card" style="width: 18rem;margin: 23px;background-color: #b4aec7;; transition: all 1s ease-in-out 0.5;">
+      <img src="{% static 'image/mahi.jpeg' %}" class="card-img-top" alt="NA">
+      <div class="card-body">
+        <h5 class="card-title">Mahendra singh puniya</h5>
+        <p class="card-text">CSE Fourth Year <br>IIIT Dharwad <br> 2020-24 </p>
+        <a href="mailto: 20bcs082@iiitdwd.ac.in" class="btn btn-primary">Email</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;margin: 23px;background-color: #b4aec7;; transition: all 1s ease-in-out 0.5;">
+      <img src="{% static 'image/mahi.jpeg' %}" class="card-img-top" alt="NA">
+      <div class="card-body">
+        <h5 class="card-title">Mahendra singh puniya</h5>
+        <p class="card-text">CSE Fourth Year <br>IIIT Dharwad <br> 2020-24 </p>
+        <a href="mailto: 20bcs082@iiitdwd.ac.in" class="btn btn-primary">Email</a>
+      </div>
+    </div>
     <div class="card" style="width: 18rem;margin: 23px;background-color: #b4aec7;; transition: all 1s ease-in-out 0.5;">
       <img src="{% static 'image/hemang.jpeg' %}" class="card-img-top" alt="NA">
       <div class="card-body">
@@ -39,8 +57,41 @@
         <a href="mailto: 20bcs057@iiitdwd.ac.in" class="btn btn-primary">Email</a>
       </div>
     </div>
+    <br>
+    
+    
   </div>
-  <h2 id="back1" class="text-center my-4 text-decoration-underline fw-bold fst-italic"style="color:darkgray ">Back-End Team</h2>
+  <div class="d-flex me-3" id="front">
+    
+    <div class="card" style="width: 18rem;margin: 23px;background-color: #b4aec7;; transition: all 1s ease-in-out 0.5;">
+      <img src="{% static 'image/mahi.jpeg' %}" class="card-img-top" alt="NA">
+      <div class="card-body">
+        <h5 class="card-title">Mahendra singh puniya</h5>
+        <p class="card-text">CSE Fourth Year <br>IIIT Dharwad <br> 2020-24 </p>
+        <a href="mailto: 20bcs082@iiitdwd.ac.in" class="btn btn-primary">Email</a>
+      </div>
+    </div>
+      <div class="card" style="width: 18rem;margin: 23px;background-color: #b4aec7;; transition: all 1s ease-in-out 0.5;">
+        <img src="{% static 'image/mahi.jpeg' %}" class="card-img-top" alt="NA">
+        <div class="card-body">
+          <h5 class="card-title">Mahendra singh puniya</h5>
+          <p class="card-text">CSE Fourth Year <br>IIIT Dharwad <br> 2020-24 </p>
+          <a href="mailto: 20bcs082@iiitdwd.ac.in" class="btn btn-primary">Email</a>
+        </div>
+      </div>
+    </div>
+    <br>
+    {% comment %} <div class="card" style="width: 18rem;margin: 23px;background-color: #b4aec7;; transition: all 1s ease-in-out 0.5;">
+      <img src="{% static 'image/hemang.jpeg' %}" class="card-img-top" alt="NA">
+      <div class="card-body">
+        <h5 class="card-title">Hemang Ranga</h5>
+        <p class="card-text">CSE Second Year <br>IIIT Dharwad <br> 2020-24 </p>
+        <a href="mailto: 20bcs057@iiitdwd.ac.in" class="btn btn-primary">Email</a>
+      </div>
+    </div> {% endcomment %}
+    
+  </div>
+  {% comment %} <h2 id="back1" class="text-center my-4 text-decoration-underline fw-bold fst-italic"style="color:darkgray ">Back-End Team</h2>
   <div class="d-flex me-3" id="back">
     <div class="card" style="width: 18rem;margin: 23px;background-color: #b4aec7;; transition: all 1s ease-in-out 0.5;">
       <img src="{% static 'image/yugal1.jpeg' %}" class="card-img-top" alt="NA">
@@ -58,7 +109,7 @@
         <a href="mailto: 20bcs@131iiitdwd.ac.in" class="btn btn-primary">Email</a>
       </div>
     </div>
-  </div>
+  </div> {% endcomment %}
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
